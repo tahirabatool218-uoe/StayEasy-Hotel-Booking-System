@@ -1,0 +1,146 @@
+:root {
+  color-scheme: light;
+
+  /* ---- Brand palette (fixed) ---- */
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-primary-rgb: 37, 99, 235;
+  --color-secondary: #0f172a; /* deep navy, used for dark panels & headings */
+  /* Text drawn on a normal surface that should read as a strong label colour.
+     Separate from --color-secondary, which is a fixed dark background that is
+     never overridden per theme. Using --color-secondary directly for label
+     text made those labels near-black on the dark surface. */
+  --color-secondary-text: #0f172a;
+  --color-accent: #10b981;
+  --color-accent-dark: #059669;
+  --color-accent-rgb: 16, 185, 129;
+
+  /* ---- Surfaces ---- */
+  --color-background: #f8fafc;
+  --color-background-alt: #eef2f8; /* subtle tint for alternating sections */
+  --color-surface: #ffffff;
+  --color-surface-sunken: #f1f5f9;
+  --color-navy: #0f172a;
+  --color-navy-soft: #16213a;
+
+  /* ---- Text ---- */
+  --color-text: #0f172a;
+  --color-heading: #0b1220;
+  --color-muted: #64748b;
+  --color-muted-soft: #94a3b8;
+  --color-on-dark: #f8fafc;
+  --color-on-dark-muted: #a9b4c6;
+  --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+
+  /* ---- Feedback ---- */
+  --color-danger: #dc2626;
+  --color-danger-bg: #fef2f2;
+  --color-danger-border: #fecaca;
+  --color-success: #059669;
+  --color-success-bg: #ecfdf5;
+  --color-success-border: #a7f3d0;
+  --color-warning: #d97706;
+  --color-warning-bg: #fffbeb;
+
+  /* ---- Typography ---- */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', serif;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.25rem;
+  --text-3xl: 2.9rem;
+  --text-4xl: 3.6rem;
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.6;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+
+  /* ---- Spacing scale ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 6.5rem;
+
+  /* ---- Radius & shadow ---- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 1px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 24px 60px -12px rgba(15, 23, 42, 0.28);
+  --shadow-focus: 0 0 0 3px rgba(var(--color-primary-rgb), 0.35);
+
+  /* ---- Motion ---- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 220ms;
+  --duration-slow: 420ms;
+
+  /* ---- Layout ---- */
+  --content-width: 1200px;
+  --content-width-narrow: 760px;
+  --header-height: 76px;
+}
+
+/* Explicit dark theme (data-theme="dark") */
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-background: #0b1220;
+  --color-background-alt: #0e1626;
+  --color-surface: #121b2e;
+  --color-surface-sunken: #0d1524;
+  --color-navy: #060a13;
+  --color-navy-soft: #0f1830;
+
+  --color-text: #e6ebf5;
+  --color-heading: #f8fafc;
+  --color-muted: #93a0b8;
+  --color-muted-soft: #6b7690;
+  --color-on-dark: #f8fafc;
+  --color-on-dark-muted: #94a3b8;
+  --color-border: #223049;
+  --color-border-strong: #2d3e5c;
+
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+  /* The RGB triples back every rgba(var(--color-*-rgb), …) tint. They must be
+     overridden alongside the hex values, otherwise light-mode tints are
+     layered over dark surfaces. */
+  --color-primary-rgb: 59, 130, 246;
+  --color-accent: #22c58f;
+  --color-accent-dark: #10b981;
+  --color-accent-rgb: 34, 197, 143;
+
+  --color-secondary-text: #f1f5f9;
+
+  --color-danger: #f87171;
+  --color-danger-bg: #2a1518;
+  --color-danger-border: #5b2429;
+  --color-success: #34d399;
+  --color-success-bg: #10241d;
+  --color-success-border: #1d4a3a;
+  --color-warning: #fbbf24;
+  --color-warning-bg: #2a2110;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 28px 64px -14px rgba(0, 0, 0, 0.6);
+  --shadow-focus: 0 0 0 3px rgba(59, 130, 246, 0.45);
+}
