@@ -538,10 +538,5 @@ StayEasy includes the following security controls:
 
 Keep all secrets in environment variables and follow the deployment platform's secret-management practices.
 
-## License
-
-This project is licensed under the ISC License.
-
----
 
 **StayEasy** — A full-stack hotel booking and management application built with the MERN stack.
