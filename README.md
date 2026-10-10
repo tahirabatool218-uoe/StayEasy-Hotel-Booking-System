@@ -2,6 +2,11 @@
 
 A full-stack MERN hotel booking and management application that allows guests to explore hotels, check room availability, make bookings, manage their trips, and write reviews. Administrators can manage hotels, rooms, bookings, users, and reviews through a dedicated admin dashboard.
 
+## Live Demo
+
+- **Live Website:** [StayEasy](YOUR_FRONTEND_URL)
+- **Backend API:** [StayEasy API](YOUR_BACKEND_URL)
+
 ## Table of Contents
 
 - [Features](#features)
@@ -146,11 +151,10 @@ Install the following before running the application:
 ### 1. Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/tahirabatool218-uoe/StayEasy-Hotel-Booking-System.git
 cd hotel-booking-system
 ```
 
-Replace `YOUR_GITHUB_REPOSITORY_URL` with your actual GitHub repository URL.
 
 ### 2. Configure the Backend
 
