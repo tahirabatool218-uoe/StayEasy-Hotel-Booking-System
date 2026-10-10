@@ -4,8 +4,8 @@ A full-stack MERN hotel booking and management application that allows guests to
 
 ## Live Demo
 
-- **Live Website:** [StayEasy](YOUR_FRONTEND_URL)
-- **Backend API:** [StayEasy API](YOUR_BACKEND_URL)
+- **Live Website:** [StayEasy](https://stay-easy-hotel-booking-system-psl8.vercel.app)
+- **Backend API:** [StayEasy API](https://stay-easy-hotel-booking-system.vercel.app)
 
 ## Table of Contents
 
