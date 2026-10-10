@@ -82,60 +82,142 @@ A full-stack MERN hotel booking and management application that allows guests to
 ```text
 hotel-booking-system/
 ├── backend/
+│   ├── .env
+│   ├── .env.example
+│   ├── .gitignore
+│   ├── package.json
 │   ├── server.js
+│   ├── scripts/
+│   │   ├── bookingData.js
+│   │   ├── checkBookingData.js
+│   │   ├── checkRoomData.js
+│   │   ├── createBookingStayIndex.js
+│   │   ├── createRoomIndex.js
+│   │   ├── roomData.js
+│   │   ├── seed.js
+│   │   ├── seedCredentials.js
+│   │   └── syncRoomCounts.js
 │   ├── src/
 │   │   ├── config/
 │   │   │   ├── db.js
 │   │   │   └── env.js
 │   │   ├── controllers/
-│   │   │   ├── authController.js
-│   │   │   ├── userController.js
-│   │   │   ├── hotelController.js
-│   │   │   ├── roomController.js
-│   │   │   ├── bookingController.js
-│   │   │   ├── reviewController.js
 │   │   │   ├── adminController.js
-│   │   │   └── uploadController.js
+│   │   │   ├── authController.js
+│   │   │   ├── bookingController.js
+│   │   │   ├── hotelController.js
+│   │   │   ├── reviewController.js
+│   │   │   ├── roomController.js
+│   │   │   ├── uploadController.js
+│   │   │   └── userController.js
 │   │   ├── middleware/
 │   │   │   ├── authMiddleware.js
-│   │   │   ├── roleMiddleware.js
 │   │   │   ├── optionalAuth.js
+│   │   │   ├── roleMiddleware.js
 │   │   │   └── security.js
 │   │   ├── models/
-│   │   │   ├── User.js
-│   │   │   ├── Hotel.js
-│   │   │   ├── Room.js
 │   │   │   ├── Booking.js
-│   │   │   └── Review.js
+│   │   │   ├── Hotel.js
+│   │   │   ├── Review.js
+│   │   │   ├── Room.js
+│   │   │   └── User.js
 │   │   ├── routes/
+│   │   │   ├── adminRoute.js
+│   │   │   ├── authRoutes.js
+│   │   │   ├── bookingRoute.js
+│   │   │   ├── hotelRoute.js
+│   │   │   ├── reviewRoute.js
+│   │   │   ├── roomRoute.js
+│   │   │   ├── uploadRoute.js
+│   │   │   └── userRoute.js
 │   │   ├── utils/
-│   │   │   ├── validators.js
-│   │   │   ├── bookingRules.js
+│   │   │   ├── bookingAvailability.js
+│   │   │   ├── bookingValidation.js
 │   │   │   ├── cloudinarySignature.js
-│   │   │   └── profileImage.js
+│   │   │   ├── escapeRegExp.js
+│   │   │   ├── generateToken.js
+│   │   │   ├── httpErrors.js
+│   │   │   ├── profileImage.js
+│   │   │   ├── roomCounts.js
+│   │   │   ├── validators.js
+│   │   │   └── ...
 │   │   └── ...
-│   ├── scripts/
-│   ├── tests/
-│   ├── .env.example
-│   └── package.json
+│   └── tests/
+│       ├── bookingStayKeys.test.js
+│       ├── bookingValidation.test.js
+│       ├── integrity.integration.test.js
+│       ├── phase1.integration.test.js
+│       ├── phase1.unit.test.js
+│       ├── profileImage.unit.test.js
+│       ├── security.integration.test.js
+│       ├── security.unit.test.js
+│       ├── seedCredentials.unit.test.js
+│       └── step3.unit.test.js
 ├── frontend/
+│   ├── .env
+│   ├── .env.example
+│   ├── .gitignore
+│   ├── .oxlintrc.json
+│   ├── index.html
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── public/
 │   ├── src/
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   ├── main.jsx
+│   │   ├── assets/
 │   │   ├── components/
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── UserMenu.jsx
+│   │   │   ├── account/
+│   │   │   ├── admin/
+│   │   │   ├── bookings/
+│   │   │   ├── home/
+│   │   │   ├── hotels/
+│   │   │   ├── reviews/
+│   │   │   ├── rooms/
+│   │   │   ├── ui/
+│   │   │   ├── uploads/
+│   │   │   └── ...
 │   │   ├── context/
-│   │   │   ├── AuthContext
-│   │   │   └── ThemeContext
+│   │   │   ├── AuthContext.jsx
+│   │   │   └── ThemeContext.jsx
+│   │   ├── hooks/
+│   │   │   ├── useApiData.js
+│   │   │   └── useDebouncedValue.js
 │   │   ├── layouts/
+│   │   │   ├── AccountLayout.jsx
+│   │   │   ├── AdminLayout.jsx
+│   │   │   ├── PublicLayout.jsx
+│   │   │   └── UserLayout.jsx
 │   │   ├── pages/
+│   │   │   ├── NotFoundPage.jsx
+│   │   │   ├── account/
+│   │   │   ├── admin/
+│   │   │   ├── auth/
+│   │   │   ├── public/
+│   │   │   └── user/
 │   │   ├── routes/
 │   │   ├── services/
-│   │   └── styles/
-│   ├── tests/
-│   ├── .env.example
-│   └── package.json
-└── README.md
+│   │   ├── styles/
+│   │   └── utils/
+│   └── tests/
+│       ├── auth.test.js
+│       ├── avatar.test.jsx
+│       ├── avatarService.test.js
+│       ├── guards.test.jsx
+│       ├── passwordInput.test.jsx
+│       ├── services.test.js
+│       ├── setup.js
+│       ├── uploader.test.jsx
+│       └── userMenu.test.jsx
+├── README.md
+└── .git/
 ```
 
-The frontend is organized into reusable components, layouts, pages, contexts, API services, and styles. The backend separates routes, controllers, models, middleware, configuration, and utilities.
+The project is split into a backend API and a frontend application. The backend handles authentication, hotel/room/booking logic, validation, and image uploads, while the frontend handles user-facing pages, reusable UI components, layouts, routes, and API integration.
 
 ## Getting Started
 
